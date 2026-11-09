@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #F4E9D8;
+    color: #49382E;
+    font-family: Georgia, serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
