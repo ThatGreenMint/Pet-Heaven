@@ -2,10 +2,9 @@
 import { useState } from 'react'
 import './App.css'
 
+const imagePath = (filename) => `${import.meta.env.BASE_URL}images/${filename}`
 
-// ==============================
-// NAVIGATION BAR
-// ==============================
+
 
 function Navbar({ page, setPage }) {
   return (
@@ -18,7 +17,7 @@ function Navbar({ page, setPage }) {
           setPage('home')
         }}
       >
-        <img src="/images/paw.png" alt="Pet Heaven Logo" />
+        <img src={imagePath('paw.png')} alt="Pet Heaven Logo" />
       </a>
 
       <div className="nav-links">
@@ -93,21 +92,18 @@ function Navbar({ page, setPage }) {
 }
 
 
-// ==============================
-// HOMEPAGE HERO
-// ==============================
 
 function Hero({ setPage }) {
   return (
     <section className="hero-section">
       <img
-        src="/images/flowers-left.png"
+        src={imagePath('flowers-left.png')}
         alt=""
         className="flower flower-left"
       />
 
       <img
-        src="/images/Pressed Yellow Wildflower Bouquet-1.png"
+        src={imagePath('Pressed Yellow Wildflower Bouquet-1.png')}
         alt=""
         className="flower flower-right"
       />
@@ -138,7 +134,7 @@ function Hero({ setPage }) {
 
       <div className="hero-art">
         <img
-          src="/images/C&D.jpg"
+          src={imagePath('C&D.jpg')}
           alt="A dog and cat resting together"
           className="hero-image"
         />
@@ -148,9 +144,6 @@ function Hero({ setPage }) {
 }
 
 
-// ==============================
-// MISSION SECTION
-// ==============================
 
 function Mission() {
   return (
@@ -177,9 +170,6 @@ function Mission() {
 }
 
 
-// ==============================
-// PET DATA
-// ==============================
 
 const pets = [
   {
@@ -188,7 +178,7 @@ const pets = [
     type: 'Dog',
     breed: 'Golden Labrador',
     age: '2 years',
-    image: '/images/buddy.jpg',
+    image: imagePath('buddy.jpg'),
     personality: 'Friendly, playful and energetic',
     description:
       'Buddy is a cheerful dog who loves walks, playing outdoors and spending time with people. He is looking for a loving family who enjoys an active lifestyle.'
@@ -199,7 +189,7 @@ const pets = [
     type: 'Cat',
     breed: 'Domestic Shorthair',
     age: '8 months',
-    image: '/images/milo.jpg',
+    image: imagePath('milo.jpg'),
     personality: 'Curious, affectionate and gentle',
     description:
       'Milo is a sweet little cat who enjoys exploring his surroundings and relaxing in cosy spaces. He would love a family who can give him plenty of attention.'
@@ -210,7 +200,7 @@ const pets = [
     type: 'Cat',
     breed: 'Domestic Shorthair',
     age: '8 year',
-    image: '/images/miki.jpg',
+    image: imagePath('miki.jpg'),
     personality: 'Calm, loving and independent',
     description:
       'Miki is a gentle cat who enjoys quiet afternoons, comfortable resting spots and occasional playtime. She would make a wonderful companion in a peaceful home.'
@@ -221,7 +211,7 @@ const pets = [
     type: 'Dog',
     breed: 'Maltese',
     age: '1 year',
-    image: '/images/coco.jpg',
+    image: imagePath('coco.jpg'),
     personality: 'Cheerful, affectionate and playful',
     description:
       'Coco is a fluffy little companion who loves cuddles, attention and spending time with people. Coco would be happiest in a caring home filled with love.'
@@ -232,7 +222,7 @@ const pets = [
     type: 'Cat',
     breed: 'Ragdoll',
     age: '3 years',
-    image: '/images/luna.jpg',
+    image: imagePath('luna.jpg'),
     personality: 'Gentle, elegant and affectionate',
     description:
       'Luna is a beautiful fluffy cat who enjoys peaceful surroundings, gentle affection and relaxing beside her favourite humans.'
@@ -243,7 +233,7 @@ const pets = [
     type: 'Cat',
     breed: 'Maine Coon',
     age: '2 years',
-    image: '/images/mina.jpg',
+    image: imagePath('mina.jpg'),
     personality: 'Independent, curious and sweet',
     description:
       'Mina loves exploring, watching the world around her and finding cosy places to rest. She is looking for a patient and loving family.'
@@ -254,7 +244,7 @@ const pets = [
     type: 'Dog',
     breed: 'Chihuahua',
     age: '3 years',
-    image: '/images/Pablo.png',
+    image: imagePath('Pablo.png'),
     personality: 'Professional troublemaker and snack enthusiast',
     description:
       'Marco has absolutely no idea what is going on, but he is very happy to be here. His hobbies include staring dramatically, demanding snacks and supervising humans. Despite his suspicious expression, Marco promises to be a very good boy.'
@@ -262,9 +252,6 @@ const pets = [
 ]
 
 
-// ==============================
-// REUSABLE PET CARD
-// ==============================
 
 function PetCard({ pet, onMeet }) {
   return (
@@ -292,9 +279,6 @@ function PetCard({ pet, onMeet }) {
 }
 
 
-// ==============================
-// HOMEPAGE FEATURED PETS
-// ==============================
 
 function FeaturedPets({ onMeet }) {
   return (
@@ -319,9 +303,6 @@ function FeaturedPets({ onMeet }) {
 }
 
 
-// ==============================
-// OUR PETS PAGE
-// ==============================
 
 function OurPets({ onMeet }) {
   const [filter, setFilter] = useState('All Pets')
@@ -387,9 +368,6 @@ function OurPets({ onMeet }) {
 }
 
 
-// ==============================
-// INDIVIDUAL PET PROFILE
-// ==============================
 
 function PetDetails({ pet, onBack, onAdopt }) {
   return (
@@ -449,9 +427,6 @@ function PetDetails({ pet, onBack, onAdopt }) {
 }
 
 
-// ==============================
-// FOOTER
-// ==============================
 
 function Footer({ setPage }) {
   return (
@@ -466,7 +441,7 @@ function Footer({ setPage }) {
           }}
         >
           <img
-            src="/images/paw.png"
+            src={imagePath('paw.png')}
             alt="Pet Heaven Logo"
           />
         </a>
@@ -786,7 +761,7 @@ function AboutUs({ setPage }) {
       <h2>About Pet Heaven</h2>
 
       <img
-          src="/images/banner.png"
+          src={imagePath('banner.png')}
           alt="A dog and cat resting together"
           className="about-image"
         />
@@ -836,12 +811,6 @@ function AboutUs({ setPage }) {
     </section>
   )
 }
-
-<img
-  src="/images/banner.png"
-  alt="A dog and cat resting together"
-  className="about-image"
-/>
 
 function App() {
   const [page, setPage] = useState('home')
