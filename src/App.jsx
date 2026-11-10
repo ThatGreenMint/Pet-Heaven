@@ -178,6 +178,7 @@ const pets = [
     type: 'Dog',
     breed: 'Golden Labrador',
     age: '2 years',
+    gender: 'Male',
     image: imagePath('buddy.jpg'),
     personality: 'Friendly, playful and energetic',
     description:
@@ -189,6 +190,7 @@ const pets = [
     type: 'Cat',
     breed: 'Domestic Shorthair',
     age: '8 months',
+    gender: 'Male',
     image: imagePath('milo.jpg'),
     personality: 'Curious, affectionate and gentle',
     description:
@@ -200,6 +202,7 @@ const pets = [
     type: 'Cat',
     breed: 'Domestic Shorthair',
     age: '8 year',
+    gender: 'Female',
     image: imagePath('miki.jpg'),
     personality: 'Calm, loving and independent',
     description:
@@ -211,6 +214,7 @@ const pets = [
     type: 'Dog',
     breed: 'Maltese',
     age: '1 year',
+    gender: 'Female',
     image: imagePath('coco.jpg'),
     personality: 'Cheerful, affectionate and playful',
     description:
@@ -222,6 +226,7 @@ const pets = [
     type: 'Cat',
     breed: 'Ragdoll',
     age: '3 years',
+    gender: 'Female',
     image: imagePath('luna.jpg'),
     personality: 'Gentle, elegant and affectionate',
     description:
@@ -233,6 +238,7 @@ const pets = [
     type: 'Cat',
     breed: 'Maine Coon',
     age: '2 years',
+    gender: 'Female',
     image: imagePath('mina.jpg'),
     personality: 'Independent, curious and sweet',
     description:
@@ -244,10 +250,11 @@ const pets = [
     type: 'Dog',
     breed: 'Chihuahua',
     age: '3 years',
+    gender: 'Male',
     image: imagePath('Pablo.png'),
     personality: 'Professional troublemaker and snack enthusiast',
     description:
-      'Marco has absolutely no idea what is going on, but he is very happy to be here. His hobbies include staring dramatically, demanding snacks and supervising humans. Despite his suspicious expression, Marco promises to be a very good boy.'
+      'Pablo has absolutely no idea what is going on, but he is very happy to be here. His hobbies include staring dramatically, demanding snacks and supervising humans. Despite his suspicious expression, Pablo promises to be a very good boy.'
   }
 ]
 
@@ -266,7 +273,7 @@ function PetCard({ pet, onMeet }) {
 
       <h3>{pet.name}</h3>
 
-      <p>{pet.breed} · {pet.age}</p>
+      <p>{pet.breed} · {pet.age} · {pet.gender}</p>
 
       <button
         type="button"
@@ -404,6 +411,10 @@ function PetDetails({ pet, onBack, onAdopt }) {
 
           <p>
             <strong>Age:</strong> {pet.age}
+          </p>
+
+          <p>
+            <strong>Gender:</strong> {pet.gender}
           </p>
 
           <p>
